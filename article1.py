@@ -35,8 +35,9 @@ def sp0(url, k):
     # service = Service('./chromedriver_127.0.6533.72_x64.exe')
     # service = ChromeService(executable_path='./chromedriver_127.0.6533.72_x64.exe')
     # driver = webdriver.Chrome(options=chrome_options, service=service)
-    driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())
-    driver = webdriver.Chrome(service=service)
+    # driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())
+    # driver = webdriver.Chrome(service=service)
+    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
     # driver = webdriver.Chrome(service=service)
     
     cookies = {
