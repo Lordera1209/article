@@ -31,6 +31,7 @@ def sp0(url, k):
     chrome_options.add_argument("--disable-blink-features=AutomationControlled")
     chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
     chrome_options.add_argument('--headless')
+    chrome_options.add_argument("--no-sandbox")
     
     # service = Service('./chromedriver_127.0.6533.72_x64.exe')
     # service = ChromeService(executable_path='./chromedriver_127.0.6533.72_x64.exe')
