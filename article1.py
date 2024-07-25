@@ -22,7 +22,7 @@ def sp0(url, k):
     proxy.ssl_proxy = "203.19.38.114:1080"
     
     chrome_options = Options()
-    chrome_options.binary_location = "C:\Program Files\Google\Chrome\Application\chrome.exe"
+    chrome_options.binary_location = r".\chrome.exe"
     chrome_options.add_experimental_option('excludeSwitches', ['enable-automation'])
     chrome_options.add_experimental_option('useAutomationExtension', False)
     # chrome_options.add_argument('--proxy-server=%s' % proxy.http_proxy)
@@ -36,8 +36,8 @@ def sp0(url, k):
     service = ChromeService(executable_path='./chromedriver_127.0.6533.72_x64.exe')
     # driver = webdriver.Chrome(options=chrome_options, service=service)
     # driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())
-    # driver = webdriver.Chrome(options=chrome_options, service=service)
-    driver = webdriver.Chrome(service=service)
+    driver = webdriver.Chrome(options=chrome_options, service=service)
+    # driver = webdriver.Chrome(service=service)
     
     cookies = {
         'name': 'BAIDUID_BFESS',
