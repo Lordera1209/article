@@ -12,6 +12,9 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.proxy import Proxy, ProxyType
 
+from webdriver_manager.chrome import ChromeDriverManager
+
+
 
 def sp0(url, k):
     proxy = Proxy()
@@ -29,8 +32,9 @@ def sp0(url, k):
     chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
     chrome_options.add_argument('--headless')
     
-    service = Service('./chromedriver_127.0.6533.72_x64.exe')
-    driver = webdriver.Chrome(options=chrome_options)
+    # service = Service('./chromedriver_127.0.6533.72_x64.exe')
+    service = ChromeService(executable_path=ChromeDriverManager().install())
+    driver = webdriver.Chrome(options=chrome_options, service=service)
     
     cookies = {
         'name': 'BAIDUID_BFESS',
@@ -77,9 +81,10 @@ def sp1(url):
     chrome_options.add_argument("--disable-blink-features=AutomationControlled")
     chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
     chrome_options.add_argument('--headless')
-    
-    service = Service('./chromedriver_127.0.6533.72_x64.exe')
-    driver = webdriver.Chrome(options=chrome_options)
+
+    service = ChromeService(executable_path=ChromeDriverManager().install())
+    # service = Service('./chromedriver_127.0.6533.72_x64.exe')
+    driver = webdriver.Chrome(options=chrome_options, service=service)
     
     cookies = {
         'name': 'BAIDUID_BFESS',
