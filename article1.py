@@ -23,7 +23,7 @@ def sp0(url, k):
     proxy.ssl_proxy = "203.19.38.114:1080"
     
     chrome_options = Options()
-    chrome_options.binary_location("./chrome.exe")
+    chrome_options.binary_location = "./chrome.exe"
     chrome_options.add_experimental_option('excludeSwitches', ['enable-automation'])
     chrome_options.add_experimental_option('useAutomationExtension', False)
     # chrome_options.add_argument('--proxy-server=%s' % proxy.http_proxy)
