@@ -79,7 +79,7 @@ def sp1(url):
     chrome_options.add_argument('--headless')
     
     service = Service('./chromedriver_127.0.6533.72_x64.exe')
-    driver = webdriver.Chrome(options=chrome_options, service=service)
+    driver = webdriver.Chrome(options=chrome_options)
     
     cookies = {
         'name': 'BAIDUID_BFESS',
