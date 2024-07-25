@@ -33,7 +33,7 @@ def sp0(url, k):
     chrome_options.add_argument('--headless')
     
     # service = Service('./chromedriver_127.0.6533.72_x64.exe')
-    service = ChromeService(executable_path=ChromeDriverManager().install())
+    service = ChromeService(executable_path='./chromedriver_127.0.6533.72_x64.exe')
     driver = webdriver.Chrome(options=chrome_options, service=service)
     
     cookies = {
