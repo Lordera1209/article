@@ -36,7 +36,8 @@ def sp0(url, k):
     service = ChromeService(executable_path='./chromedriver_127.0.6533.72_x64.exe')
     # driver = webdriver.Chrome(options=chrome_options, service=service)
     # driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())
-    driver = webdriver.Chrome(options=chrome_options, service=service)
+    # driver = webdriver.Chrome(options=chrome_options, service=service)
+    driver = webdriver.Firefox()
     
     cookies = {
         'name': 'BAIDUID_BFESS',
